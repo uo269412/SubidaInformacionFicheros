@@ -1,0 +1,34 @@
+<!DOCTYPE HTML>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <title>Cargando ficheros en local</title>
+        <link rel="stylesheet" type="text/css" href="Ejercicio12.css" />
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="Ejercicio12.js"></script>
+    </head>
+    <body onload="lectorArchivos.calcularTamañoArchivos();">
+        <h1>Cargador ficheros</h1>
+        <section>
+            <h2>Sube varios archivos</h2>
+                <p>API File: Selecionar varios archivos de la máquina cliente</p>
+                <p><label for="variosArchivos">Escoge los archivos: </label> <input id="variosArchivos" type="file" name="Archivos" onchange="lectorArchivos.calcularTamañoArchivos();" multiple=""></p>
+                <p>Archivos seleccionados: <span id="numero">0</span></p>
+                <p>Tamaño total: <span id="tamaño">0 bytes</span></p>
+                <span id="nombres"></span>
+        </section>
+        <section>
+            <h2>Sube un solo archivo</h2>
+            <p>API File: Selecionar un solo archivo de la máquina cliente</p>
+            <label for="subirArchivos">Escoge el archivo: </label> 
+            <input type="file" id="subirArchivos" onchange="lectorArchivos.leerArchivoTexto(this.files);">
+            <p id="errorLectura">Aquí aparecerá información sobre los errores</p> 
+            <p id="nombreArchivo">Aquí aparecerá el nombre del archivo</p>
+            <p id="tamañoArchivo">Aquí aparecerá el tamaño del archivo</p>
+            <p id="tipoArchivo">Aquí aparecerá el tipo del archivo</p>
+            <p id="ultimaModificacion">Aquí aparecerá la última modificación del archivo</p>
+            <p id="contenidoArchivo">Aquí aparecerá el contenido del archivo</p>  
+            <pre id="areaTexto">Aquí aparecerá todo el texto contenido en el archivo</pre>
+        </section>  
+    </body>
+</html>
